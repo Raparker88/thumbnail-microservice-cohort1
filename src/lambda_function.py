@@ -21,6 +21,8 @@ def lambda_handler(event, context):
     
     # Get bucket and key from S3 event
     try:
+        print(f"Event Object: {event}")
+        print(f"Context Object: {context}")
         bucket = event['Records'][0]['s3']['bucket']['name']
         key = event['Records'][0]['s3']['object']['key']
         
